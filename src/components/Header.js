@@ -112,21 +112,20 @@ export default function Header() {
             spacing={6}
           >
             <Button
-  as="a"
-  href="/SHAFIN K.pdf"
-  target="_blank"
-  display={{ base: "inline-flex", md: "inline-flex" }}
-  fontSize={"sm"}
-  fontWeight={600}
-  color={"white"}
-  bg={"primary.700"}
-  _hover={{
-    bg: "primary.900",
-  }}
->
-  View Resume
-</Button>
-
+              as="a"
+              href="/SHAFIN K.pdf"
+              target="_blank"
+              display={{ base: "inline-flex", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"primary.700"}
+              _hover={{
+                bg: "primary.900",
+              }}
+            >
+              View Resume
+            </Button>
           </Stack>
         </Flex>
 
@@ -312,7 +311,7 @@ const NAV_ITEMS = [
     href: "#projects",
   },
   {
-    label: "Freelance",
+    label: "Connect With Me",
     href: "#freelance",
   },
 ];
