@@ -11,7 +11,8 @@ import {
     useBreakpointValue,
     Tag
 } from '@chakra-ui/react';
-
+import { motion } from "framer-motion";
+const MotionBox = motion(Box);
 const milestones = [
     {
         id: 1,
@@ -84,7 +85,8 @@ const Projects = () => {
             }}
         >
 
-            {milestones.map((milestone) => (
+            {milestones.map((milestone,index) => (
+                
                 <Flex key={milestone.id} mb="10px">
                     {/* Desktop view(left card) */}
                     {isDesktop && milestone.id % 2 === 0 && (
@@ -156,6 +158,7 @@ const Card = ({ id, title, description, date, technologies }) => {
             }}
         >
             <Box>
+                
                 <Text fontSize="md" color={isEvenId ? 'primary.800' : 'blue.700'}>
                     {date}
                 </Text>

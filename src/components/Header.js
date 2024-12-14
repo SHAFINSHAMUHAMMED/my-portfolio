@@ -24,7 +24,8 @@ import {
 } from "@chakra-ui/icons";
 import { useState, useEffect } from "react";
 import logo from "../images/Mylogo.png";
-
+import { motion } from "framer-motion";
+const MotionBox = motion(Box);
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,6 +48,15 @@ export default function Header() {
   }, []);
 
   return (
+    <MotionBox
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      position="relative"
+      top="0"
+      w="100%"
+      zIndex="999"
+    >
     <Box>
       {/* Main Header */}
       <Box
@@ -134,6 +144,7 @@ export default function Header() {
         </Collapse>
       </Box>
     </Box>
+    </MotionBox>
   );
 }
 
@@ -143,6 +154,15 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
+    <MotionBox
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      position="relative"
+      top="0"
+      w="100%"
+      zIndex="999"
+    >
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
@@ -186,11 +206,21 @@ const DesktopNav = () => {
         </Box>
       ))}
     </Stack>
+    </MotionBox>
   );
 };
 
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
+    <MotionBox
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      position="relative"
+      top="0"
+      w="100%"
+      zIndex="999"
+    >
     <Link
       href={href}
       role={"group"}
@@ -231,11 +261,21 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
         </Flex>
       </Stack>
     </Link>
+    </MotionBox>
   );
 };
 
 const MobileNav = () => {
   return (
+    <MotionBox
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      position="relative"
+      top="0"
+      w="100%"
+      zIndex="999"
+    >
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
@@ -245,6 +285,7 @@ const MobileNav = () => {
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
+    </MotionBox>
   );
 };
 
@@ -252,6 +293,15 @@ const MobileNavItem = ({ label, children, href }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
+    <MotionBox
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      position="relative"
+      top="0"
+      w="100%"
+      zIndex="999"
+    >
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
@@ -298,6 +348,7 @@ const MobileNavItem = ({ label, children, href }) => {
         </Stack>
       </Collapse>
     </Stack>
+    </MotionBox>
   );
 };
 
