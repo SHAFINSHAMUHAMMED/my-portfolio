@@ -1329,7 +1329,7 @@ const RAW_RUNTIME_STATE =
           ["@types/postcss", null],\
           ["autoprefixer", "virtual:17e7ae47aefe3459cf6080b6b5247bcb3cc6453ed7ff2e5bf8e97ce3af345103b55e2822789063a9d12bc39f00a813a1afd042bc9fa94ec04730837877b7269b#npm:10.4.21"],\
           ["browserslist", "npm:4.25.0"],\
-          ["caniuse-lite", "npm:1.0.30001723"],\
+          ["caniuse-lite", "npm:1.0.30001724"],\
           ["fraction.js", "npm:4.3.7"],\
           ["normalize-range", "npm:0.1.2"],\
           ["picocolors", "npm:1.1.1"],\
@@ -1605,8 +1605,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../Users/hp/AppData/Local/Yarn/Berry/cache/browserslist-npm-4.25.0-869551b108-10c0.zip/node_modules/browserslist/",\
         "packageDependencies": [\
           ["browserslist", "npm:4.25.0"],\
-          ["caniuse-lite", "npm:1.0.30001723"],\
-          ["electron-to-chromium", "npm:1.5.170"],\
+          ["caniuse-lite", "npm:1.0.30001724"],\
+          ["electron-to-chromium", "npm:1.5.171"],\
           ["node-releases", "npm:2.0.19"],\
           ["update-browserslist-db", "virtual:869551b10809a3e2ff53d630c33d6910e8604641d5ce93f662d5bcd7e2e4637ea42af7b06094f62db452de748bfc21441444c7b5d57adbed850dd1fa2aa08c28#npm:1.1.3"]\
         ],\
@@ -1767,10 +1767,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["caniuse-lite", [\
-      ["npm:1.0.30001723", {\
-        "packageLocation": "../../../Users/hp/AppData/Local/Yarn/Berry/cache/caniuse-lite-npm-1.0.30001723-b76b1ad4e4-10c0.zip/node_modules/caniuse-lite/",\
+      ["npm:1.0.30001724", {\
+        "packageLocation": "../../../Users/hp/AppData/Local/Yarn/Berry/cache/caniuse-lite-npm-1.0.30001724-bc02fa7d43-10c0.zip/node_modules/caniuse-lite/",\
         "packageDependencies": [\
-          ["caniuse-lite", "npm:1.0.30001723"]\
+          ["caniuse-lite", "npm:1.0.30001724"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2325,10 +2325,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["electron-to-chromium", [\
-      ["npm:1.5.170", {\
-        "packageLocation": "../../../Users/hp/AppData/Local/Yarn/Berry/cache/electron-to-chromium-npm-1.5.170-80d86063bd-10c0.zip/node_modules/electron-to-chromium/",\
+      ["npm:1.5.171", {\
+        "packageLocation": "../../../Users/hp/AppData/Local/Yarn/Berry/cache/electron-to-chromium-npm-1.5.171-9697ab7b1a-10c0.zip/node_modules/electron-to-chromium/",\
         "packageDependencies": [\
-          ["electron-to-chromium", "npm:1.5.170"]\
+          ["electron-to-chromium", "npm:1.5.171"]\
         ],\
         "linkType": "HARD"\
       }]\
