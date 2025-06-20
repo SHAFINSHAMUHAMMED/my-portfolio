@@ -1,0 +1,6 @@
+buildCommand: {
+  corepack enable
+  corepack prepare yarn@4.8.1 --activate
+  yarn install
+  yarn build
+}
