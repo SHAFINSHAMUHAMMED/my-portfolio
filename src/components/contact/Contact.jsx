@@ -64,7 +64,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="right flex-1">
+        <div className="right flex-1 w-[100%] ">
           <form
             onSubmit={handleSubmit}
             className="flex justify-center items-center flex-col gap-5 w-[70%] md:w-[100%] sm:w-[95%] mx-auto"
