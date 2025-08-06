@@ -5,14 +5,25 @@ import { RxExternalLink } from "react-icons/rx";
 import { AiOutlineGithub } from "react-icons/ai";
 import { GrView } from "react-icons/gr";
 import { Link } from "react-router-dom";
-
+import { Tilt } from "react-tilt";
 const WorkCard = () => {
   const reversedData = [...data].reverse();
-
+const defaultOptions = {
+  reverse: false,
+  max: 35,
+  perspective: 1000,
+  scale: 1.1,
+  speed: 1000,
+  transition: true,
+  axis: null,
+  reset: true,
+  easing: "cubic-bezier(.03,.98,.52,.99)",
+};
   return (
     <>
       {reversedData.map((data) => {
         return (
+          <Tilt options={defaultOptions} style={{ width: "auto" }}>
           <div
             data-aos="zoom-in"
             key={data.id}
@@ -46,10 +57,11 @@ const WorkCard = () => {
                 </div>
               </div>
             </POPUP>
-            <p className="text-gray-800 text-xl font-medium sm:text-lg">
+            <p className="text-gray-900 text-xl font-medium sm:text-lg">
               {data.title}
             </p>
           </div>
+          </Tilt>
         );
       })}
     </>

@@ -43,8 +43,8 @@ const Contact = () => {
   return (
     <div id="contact" className="container m-auto mt-16">
       <div className="relative mb-5">
-        <h3 className=" text-3xl font-black text-gray-400 sm:text-2xl">Contact</h3>
-        <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
+        <h3 className=" text-3xl font-black text-gray-600 sm:text-2xl">Contact</h3>
+        <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-400 block"></span>
       </div>
 
       <div className="card-wrapper w-[90%] sm:w-[100%] mx-auto mt-5 flex items-center justify-center sm:flex-col">
@@ -57,7 +57,7 @@ const Contact = () => {
               </h3>
             </div>
           </div>
-          <div className=" flex p-5 items-center justify-center ">
+          <div className=" flex p-5 items-center justify-center bg-white">
             <button className=" text-yellow-500 font-extrabold text-3xl p-2 rounded-lg shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] ">
               <BsArrowRight className=" md:rotate-90" />
             </button>
