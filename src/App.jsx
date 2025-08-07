@@ -4,7 +4,7 @@ import { BarLoader } from "react-spinners";
 import Home from "./pages/Home";
 import AnimatedCursor from "./components/AnimatedCursor";
 import DotGrid from "./components/DotGrid"; // Import DotGrid
-
+import { SmoothCursor } from "./components/SmoothCursor";
 const App = () => {
   const [loading, setLoading] = useState(true);
 
@@ -35,7 +35,10 @@ const App = () => {
       {/* Main content */}
       <div style={{ position: "relative", zIndex: 1 }}>
         {/* Animated Cursor */}
-        <AnimatedCursor />
+        {/* <AnimatedCursor /> */}
+
+        {/* Smooth Cursor */}
+        <SmoothCursor />
 
         {/* Suspense and Home Component */}
         <Suspense

@@ -44,7 +44,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div id="home" className="bg-[#f0f3e3]" style={{ position: 'relative', height: '100vh' }}>
+    <div id="home" className="bg-[#f0f3e3]" style={{ position: 'relative', height: 'auto' }}>
       {/* Particles Animation */}
       <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
         <Particles

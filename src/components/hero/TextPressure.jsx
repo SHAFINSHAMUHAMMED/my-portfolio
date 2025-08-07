@@ -16,6 +16,7 @@ const TextPressure = ({
   strokeWidth = 2,
   className = '',
   minFontSize = 24,
+  maxFontSize = 120, // Added max font size
 }) => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
@@ -27,7 +28,7 @@ const TextPressure = ({
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1);
 
-  const chars = text.split('').map((char) => (char === ' ' ? '\u00A0' : char)); // Replace spaces with non-breaking spaces
+  const chars = text.split('').map((char) => (char === ' ' ? '\u00A0' : char));
 
   const dist = (a, b) => {
     const dx = b.x - a.x;
@@ -69,7 +70,11 @@ const TextPressure = ({
 
     const { width: containerW, height: containerH } = containerRef.current.getBoundingClientRect();
 
-    let newFontSize = containerW / (chars.length / 2);
+    // Calculate font size based on container width but constrained by min/max
+    let newFontSize = Math.min(
+      containerW / (chars.length / 1.5), // Adjusted divisor for better scaling
+      maxFontSize
+    );
     newFontSize = Math.max(newFontSize, minFontSize);
 
     setFontSize(newFontSize);
@@ -140,7 +145,7 @@ const TextPressure = ({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full overflow-hidden bg-transparent"
+      className={`relative w-auto sm:min-w-[300px] md:min-w-[650px] h-full overflow-hidden bg-transparent ${className}`} // Changed w-full to w-auto
     >
       <style>{`
         @font-face {
@@ -166,16 +171,17 @@ const TextPressure = ({
 
       <h1
         ref={titleRef}
-        className={`text-pressure-title ${className} ${flex ? 'flex justify-between' : ''} ${stroke ? 'stroke' : ''} uppercase text-center`}
+        className={`text-pressure-title ${flex ? 'flex justify-between' : ''} ${stroke ? 'stroke' : ''} uppercase`}
         style={{
           fontFamily,
-          fontSize: fontSize,
+          fontSize: `${fontSize}px`,
           lineHeight,
           transform: `scale(1, ${scaleY})`,
           transformOrigin: 'center top',
           margin: 0,
           fontWeight: 100,
           color: stroke ? undefined : textColor,
+          whiteSpace: 'nowrap' // Prevent text wrapping
         }}
       >
         {chars.map((char, i) => (
