@@ -27,7 +27,7 @@ const AnimatedCursor = () => {
       gsap.to(follower, {
         x: clientX,
         y: clientY,
-        duration: 0.3,
+        duration: 0.1,
         ease: "power2.out"
       });
     };
@@ -35,14 +35,14 @@ const AnimatedCursor = () => {
     const handleMouseEnter = () => {
       gsap.to([cursor, follower], {
         opacity: 1,
-        duration: 0.2
+        duration: 0.1
       });
     };
 
     const handleMouseLeave = () => {
       gsap.to([cursor, follower], {
         opacity: 0,
-        duration: 0.2
+        duration: 0.1
       });
     };
 
