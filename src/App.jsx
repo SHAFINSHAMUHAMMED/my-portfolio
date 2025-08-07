@@ -40,14 +40,14 @@ const App = () => {
         {/* Suspense and Home Component */}
         <Suspense
           fallback={
-            <div className="h-screen w-full flex items-center justify-center">
+            <div className="h-screen w-full flex items-center justify-center bg-[#dfe7b8]">
               <BarLoader color="#f6c400" height={4} />
             </div>
           }
         >
           {loading ? (
-            <div className="h-screen w-full flex items-center justify-center">
-              <BarLoader color="#f6c400" height={4} />
+            <div className="h-screen w-full flex items-center justify-center bg-[#dfe7b8]">
+              <BarLoader color="#d6ac06" height={4} />
             </div>
           ) : (
             <Home />

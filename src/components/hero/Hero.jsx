@@ -1,9 +1,5 @@
-import React from "react";
-import {
-  AiFillTwitterCircle,
-  AiFillGithub,
-  AiFillInstagram,
-} from "react-icons/ai";
+import React, { useEffect, useRef, useState } from "react";
+import { AiFillTwitterCircle, AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
@@ -12,9 +8,41 @@ import resumePDF from "../../assets/SHAFIN K.pdf";
 import Profile from "../../assets/PROFILE.webp";
 import Developer from "../../assets/Full Stack Developer2.png";
 import TextPressure from "./TextPressure";
-import Particles from "./Particles"; // Import the Particles component
+import Particles from "./Particles";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+  const btnRef = useRef(null);
+  const spanRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { width } = e.target.getBoundingClientRect();
+      const offset = e.offsetX;
+      const left = `${(offset / width) * 100}%`;
+
+      spanRef.current.animate({ left }, { duration: 250, fill: "forwards" });
+    };
+
+    const handleMouseLeave = () => {
+      spanRef.current.animate(
+        { left: "50%" },
+        { duration: 100, fill: "forwards" }
+      );
+    };
+
+    if (btnRef.current) {
+      btnRef.current.addEventListener("mousemove", handleMouseMove);
+      btnRef.current.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        btnRef.current.removeEventListener("mousemove", handleMouseMove);
+        btnRef.current.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    }
+  }, []);
+
   return (
     <div id="home" className="bg-[#f0f3e3]" style={{ position: 'relative', height: '100vh' }}>
       {/* Particles Animation */}
@@ -41,7 +69,7 @@ const Hero = () => {
               textColor="#000000"
               strokeColor="#ff0000"
               minFontSize={24}
-              className="text-5xl font-bold sm:text-[2rem]"
+              className="text-xl font-bold sm:text-[2rem]"
             />
             <TypeAnimation
               data-aos="fade-up"
@@ -56,24 +84,39 @@ const Hero = () => {
             </p>
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
-            <a
+            <motion.a
+              ref={btnRef}
               href="https://www.linkedin.com/in/shafin-k"
               target="_blank"
-              className="bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold hover:text-yellow-500"
+              className="relative bg-black text-[1rem] overflow-hidden text-white px-10 py-2 sm:px-8 rounded-lg font-bold hover:text-yellow-500"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
-              <span> Hire Me</span>
-            </a>
-            <a
+              <span className="pointer-events-none relative z-10 mix-blend-difference">
+                Hire Me
+              </span>
+              {isHovered && (
+                <span
+                  ref={spanRef}
+                  className="pointer-events-none absolute left-[50%] top-[50%] h-20 w-20 -translate-x-[50%] -translate-y-[50%] rounded-full bg-slate-100"
+                />
+              )}
+            </motion.a>
+
+            {/* Resume Download Button with Motion Effect */}
+            <motion.a
               href={resumePDF}
-              className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold hover:text-yellow-500"
+              className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold hover:text-yellow-500 cursor-pointer z-10"
               download
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.5 }}
             >
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 cursor-pointer ">
                 Resume <FiDownload />
               </div>
-            </a>
+            </motion.a>
           </div>
-          <div className="icons flex mt-5">
+          <div className="icons flex mt-5 z-10">
             <ul
               data-aos="fade-up"
               data-aos-duration="1500"

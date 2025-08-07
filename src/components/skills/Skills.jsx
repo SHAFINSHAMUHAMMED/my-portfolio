@@ -2,6 +2,7 @@ import React from "react";
 import ProgressBar from "../../chip/ProgressBar";
 import SkillBox from "../../chip/SkillBox";
 import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io";
+import { FaNode } from "react-icons/fa6";
 import { SiJavascript, SiTailwindcss, SiMongodb, SiExpress } from "react-icons/si";
 import { FaReact, FaWordpress } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
@@ -22,6 +23,7 @@ const defaultOptions = {
 const Skills = ({ darkMode }) => {
   return (
     <div id="skills">
+      
       <div className="container m-auto mt-16">
         {/* heading */}
         <div data-aos="fade-up" className="relative mb-5">
@@ -40,10 +42,10 @@ const Skills = ({ darkMode }) => {
               className="progress flex items-center h-[100%] justify-end md:justify-center"
             >
               <div className="flex flex-col gap-6 w-3/4 my-5 md:w-[90%]">
-                <ProgressBar logo={<IoLogoHtml5 />} name={"HTML"} value={95} />
-                <ProgressBar logo={<IoLogoCss3 />} name={"CSS"} value={88} />
-                <ProgressBar logo={<SiJavascript />} name={"Javascript"} value={95} />
                 <ProgressBar logo={<FaReact />} name={"React Js"} value={95} />
+                <ProgressBar logo={<IoLogoHtml5 />} name={"HTML"} value={95} />
+                <ProgressBar logo={<IoLogoCss3 />} name={"CSS"} value={98} />
+                <ProgressBar logo={<SiJavascript />} name={"Javascript"} value={95} />
                 <ProgressBar logo={<SiTailwindcss />} name={"Tailwind CSS"} value={90} />
               </div>
             </div>
