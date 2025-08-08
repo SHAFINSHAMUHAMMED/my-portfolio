@@ -4,10 +4,10 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -17,20 +17,21 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const webhookURL = "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZmMDYzNDA0MzQ1MjY1NTUzMzUxMzAi_pc";
+    const webhookURL =
+      "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZmMDYzNDA0MzQ1MjY1NTUzMzUxMzAi_pc";
 
     try {
       const response = await fetch(webhookURL, {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         alert("Message sent successfully!");
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         alert("Failed to send message.");
       }
@@ -43,7 +44,9 @@ const Contact = () => {
   return (
     <div id="contact" className="container m-auto mt-16">
       <div className="relative mb-5">
-        <h3 className=" text-3xl font-black text-gray-600 sm:text-2xl">Contact</h3>
+        <h3 className=" text-3xl font-black text-gray-600 sm:text-2xl">
+          Contact
+        </h3>
         <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-400 block"></span>
       </div>
 
@@ -52,11 +55,12 @@ const Contact = () => {
           <div className="flex-3 w-1/2 gap-3 flex items-end justify-end  flex-col sm:w-3/4">
             <div>
               <h1 className="text-4xl font-bold text-gray-800 sm:text-2xl mb-4">
-    Need a Fast & Clean Design?
-  </h1>
-  <h3 className="text-lg font-medium text-gray-600 sm:text-sm mb-6">
-    Get a responsive, modern website design tailored for your project. Let's build it.
-  </h3>
+                Need a Fast & Clean Design?
+              </h1>
+              <h3 className="text-lg font-medium text-gray-600 sm:text-sm mb-6">
+                Get a responsive, modern website design tailored for your
+                project. Let's build it.
+              </h3>
             </div>
           </div>
           <div className=" flex p-5 items-center justify-center bg-white">
